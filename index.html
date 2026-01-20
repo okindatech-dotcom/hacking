@@ -2,26 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Bypass Site</title>
+  <title>Iframe Bypass</title>
 </head>
 <body>
-  <h1>Bypassed View</h1>
-  <div id="content">Loading…</div>
-
-  <script>
-    fetch("https://crime-scene-management-okinda-tech-hub-6hr2.bolt.host")
-      .then(res => res.text())
-      .then(html => {
-        // Strip restrictive CSS
-        html = html.replace(/user-select:\s*none;?/gi, "user-select: text;");
-        html = html.replace(/contextmenu/gi, "noop");
-
-        document.getElementById("content").innerHTML = html;
-      })
-      .catch(err => {
-        document.getElementById("content").innerText =
-          "Failed to load remote site. This may be due to CORS restrictions.";
-      });
-  </script>
+  <h1>Iframe Wrapper</h1>
+  <iframe src="https://host-a-site.com" width="100%" height="800"></iframe>
 </body>
 </html>
